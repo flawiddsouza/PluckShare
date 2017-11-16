@@ -1,0 +1,17 @@
+doctype html
+html
+    head
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        title= title
+        link(rel='stylesheet', href='/style.css')
+        script(src='/clipboard.min.js')
+    body#video
+        section
+            h1= title
+            video(src=videoPath, controls, class='card')
+            div(class='share-box') Share URL
+                div(class='share-bar')
+                    input#share-input(value= rootUrl + videoPath.replace('uploads', 'watch'))
+                    button#share-button(data-clipboard-target="#share-input") Copy
+        script new Clipboard('#share-button')
