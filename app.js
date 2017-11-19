@@ -39,7 +39,7 @@ app.post('/upload', upload.single('file'), (req, res) => {
 
 const isDirectory = filePath => fs.statSync(filePath).isDirectory()
 
-const readdirSync = filePath => fs.readdirSync(filePath).filter(file => file != '.gitignore')
+const readdirSync = filePath => fs.readdirSync(filePath).filter(file => file != '.gitignore').filter(file => file != 'thumbnail.png')
 
 // From https://gist.github.com/kethinov/6658166#gistcomment-1976458
 const lsDir = (dir, fileList = []) => {
