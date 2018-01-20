@@ -12,6 +12,6 @@ html
             video(src=videoPath, controls, class='card')
             div(class='share-box') Share URL
                 div(class='share-bar')
-                    input#share-input(value= rootUrl + videoPath.replace('uploads', 'watch'))
+                    input#share-input(value= rootUrl + videoPath.replace('uploads', 'watch').replace(/\s+/g, '-'))
                     button#share-button(data-clipboard-target="#share-input") Copy
         script new Clipboard('#share-button')

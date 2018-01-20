@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', event => {
                     <div class="share-box">
                         Share URL
                         <div class="share-bar">
-                            <input id="share-input" value="${location.href}watch${uploadedVideo.path}">
+                            <input id="share-input" value="${location.href}watch${uploadedVideo.path.replace(/\s+/g, '-')}">
                             <button id="share-button" data-clipboard-target="#share-input">Copy to Clipboard</button>
                         </div>
                     </div>
